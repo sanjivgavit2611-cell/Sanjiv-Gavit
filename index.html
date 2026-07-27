@@ -1,0 +1,286 @@
+```html
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanjiv Gavit | Python Developer & Cybersecurity Enthusiast</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace'],
+                    },
+                    colors: {
+                        cyber: {
+                            green: '#10b981',
+                            dark: '#0a0f1d',
+                            card: '#111827',
+                            accent: '#06b6d4'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .terminal-glow {
+            box-shadow: 0 0 25px -5px rgba(16, 185, 129, 0.25);
+        }
+        .code-bg {
+            background-size: 30px 30px;
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-emerald-500 selection:text-slate-950 code-bg min-h-screen flex flex-col justify-between">
+
+    <!-- Navigation Header -->
+    <header class="fixed top-0 left-0 w-full bg-slate-950/90 backdrop-blur-md z-50 border-b border-slate-800/80">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="font-mono text-lg font-bold tracking-wider text-emerald-400 flex items-center gap-2">
+                <span class="text-slate-500">&gt;</span> sanjiv_gavit<span class="animate-pulse text-emerald-400">_</span>
+            </a>
+            
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex space-x-6 text-sm font-mono">
+                <a href="#about" class="text-slate-300 hover:text-emerald-400 transition">/about</a>
+                <a href="#skills" class="text-slate-300 hover:text-emerald-400 transition">/skills</a>
+                <a href="#achievements" class="text-slate-300 hover:text-emerald-400 transition">/achievements</a>
+                <a href="#goals" class="text-slate-300 hover:text-emerald-400 transition">/goals</a>
+                <a href="#review" class="text-slate-300 hover:text-emerald-400 transition">/feedback</a>
+                <a href="#connect" class="text-slate-300 hover:text-emerald-400 transition">/connect</a>
+            </nav>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button id="menuBtn" class="md:hidden text-slate-300 hover:text-emerald-400 focus:outline-none p-2 text-xl" aria-label="Toggle Navigation">
+                <i class="fa-solid fa-code"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-slate-900 border-b border-slate-800 px-6 py-4 space-y-3 font-mono text-sm">
+            <a href="#about" class="block text-slate-300 hover:text-emerald-400">/about</a>
+            <a href="#skills" class="block text-slate-300 hover:text-emerald-400">/skills</a>
+            <a href="#achievements" class="block text-slate-300 hover:text-emerald-400">/achievements</a>
+            <a href="#goals" class="block text-slate-300 hover:text-emerald-400">/goals</a>
+            <a href="#review" class="block text-slate-300 hover:text-emerald-400">/feedback</a>
+            <a href="#connect" class="block text-slate-300 hover:text-emerald-400">/connect</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="pt-28 pb-16 px-4 max-w-5xl mx-auto flex-grow flex items-center">
+        <div class="w-full">
+            <!-- Status Badge -->
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-mono mb-6">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                <span>Class 11 Science Student • Future IITian 🇮🇳</span>
+            </div>
+
+            <!-- Main Heading -->
+            <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight mb-4 leading-tight">
+                Hi, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400">Sanjiv Gavit</span> 👋
+            </h1>
+
+            <p class="text-lg md:text-xl text-slate-300 max-w-3xl leading-relaxed mb-8">
+                A 16-year-old creator & learner from Navapur, Maharashtra. Passionate about <span class="text-emerald-400 font-semibold">Python</span>, <span class="text-cyan-400 font-semibold">Cybersecurity</span>, <span class="text-purple-400 font-semibold">Video Editing</span>, and <span class="text-pink-400 font-semibold">Drawing</span>. My dream is to study at <strong class="text-yellow-400">IIT Bombay</strong>.
+            </p>
+
+            <!-- Terminal Mockup Window -->
+            <div class="bg-slate-900/90 border border-slate-800 rounded-xl overflow-hidden terminal-glow mb-8 font-mono text-sm shadow-2xl">
+                <div class="bg-slate-950 px-4 py-2.5 border-b border-slate-800/80 flex items-center gap-2">
+                    <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
+                    <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+                    <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
+                    <span class="text-xs text-slate-500 ml-2">sanju@termux:~</span>
+                </div>
+                <div class="p-4 sm:p-5 text-slate-300 space-y-2 overflow-x-auto">
+                    <p><span class="text-emerald-400">sanju@termux:~$</span> python3 -c "import sanjiv_gavit"</p>
+                    <p class="text-slate-400 pl-4">&gt;&gt; Dream: <span class="text-yellow-400">IIT Bombay 🏛️</span></p>
+                    <p class="text-slate-400 pl-4">&gt;&gt; Goal: <span class="text-cyan-400">Cybersecurity Engineer & Tech Founder 🚀</span></p>
+                    <p class="text-slate-400 pl-4">&gt;&gt; Instagram: <a href="https://www.instagram.com/iam._sanjuuu_?igsh=d2N6dzE1ajl5eDN0" target="_blank" class="text-pink-400 hover:underline">@iam._sanjuuu_ 📸</a></p>
+                    <p class="text-slate-400 pl-4">&gt;&gt; Creative Hobbies: <span class="text-purple-300">Video Editing 🎬 | Drawing 🎨 | AI Music 🎵</span></p>
+                </div>
+            </div>
+
+            <!-- CTAs & Social Buttons -->
+            <div class="flex flex-wrap items-center gap-4">
+                <a href="https://github.com/sanjivgavit2611-cell" target="_blank" class="px-5 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold transition flex items-center gap-2 shadow-lg shadow-emerald-500/20">
+                    <i class="fa-brands fa-github text-lg"></i> GitHub
+                </a>
+                <a href="https://www.instagram.com/iam._sanjuuu_?igsh=d2N6dzE1ajl5eDN0" target="_blank" class="px-5 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white font-bold transition flex items-center gap-2 shadow-lg shadow-pink-500/20">
+                    <i class="fa-brands fa-instagram text-lg"></i> Instagram
+                </a>
+                <a href="#review" class="px-5 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 font-medium border border-slate-800 transition flex items-center gap-2">
+                    <i class="fa-solid fa-star text-yellow-400"></i> Leave Feedback
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="py-16 bg-slate-900/50 border-y border-slate-800/80 px-4">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-2xl sm:text-3xl font-bold mb-8 text-white flex items-center gap-3">
+                <span class="text-emerald-400 font-mono">01.</span> About Me
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Bio Box -->
+                <div class="md:col-span-2 bg-slate-900 p-6 sm:p-8 rounded-2xl border border-slate-800 space-y-4 text-slate-300 leading-relaxed">
+                    <p>
+                        Hello! I'm <strong class="text-white">Sanjiv Gavit</strong>, a 16-year-old Class 11 Science student from <strong class="text-white">Navapur, Maharashtra, India 🇮🇳</strong>.
+                    </p>
+                    <p>
+                        I am passionate about <strong class="text-emerald-400">Python programming</strong>, <strong class="text-cyan-400">Cybersecurity</strong>, and creating useful software. I am constantly learning, building personal projects, and honing my technical & creative skills every single day.
+                    </p>
+                    <p>
+                        Beyond coding on my mobile setup (<strong class="text-slate-200">Termux, Pydroid 3, Acode</strong>), I also express my creativity through <strong class="text-purple-400">Video Editing 🎬</strong>, <strong class="text-pink-400">Drawing 🎨</strong>, and experimenting with <strong class="text-indigo-400">Suno AI Music 🎵</strong>.
+                    </p>
+                    <p class="pt-2 border-t border-slate-800 text-sm text-yellow-300/90 font-medium">
+                        ✨ Dream: Crack JEE, study at <strong>IIT Bombay</strong>, and build technology that makes a real impact on people's lives!
+                    </p>
+                </div>
+
+                <!-- Quick Info Box -->
+                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 flex flex-col justify-between space-y-4">
+                    <h3 class="font-mono text-xs uppercase tracking-wider text-slate-400 border-b border-slate-800 pb-2">Quick Profile</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex justify-between"><span class="text-slate-400">Name:</span> <span class="text-white font-medium">Sanjiv Gavit</span></li>
+                        <li class="flex justify-between"><span class="text-slate-400">Age:</span> <span class="text-white font-medium">16 Years</span></li>
+                        <li class="flex justify-between"><span class="text-slate-400">Location:</span> <span class="text-white font-medium">Navapur, MH 🇮🇳</span></li>
+                        <li class="flex justify-between"><span class="text-slate-400">Education:</span> <span class="text-white font-medium">Class 11 Science</span></li>
+                        <li class="flex justify-between"><span class="text-slate-400">10th Board:</span> <span class="text-emerald-400 font-bold">87.80% 🏆</span></li>
+                        <li class="flex justify-between"><span class="text-slate-400">Arts/Drawing:</span> <span class="text-purple-400 font-bold">Grade B 🎨</span></li>
+                        <li class="flex justify-between"><span class="text-slate-400">Dream:</span> <span class="text-yellow-400 font-medium">IIT Bombay</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Interests Badges -->
+            <div class="mt-8">
+                <h3 class="text-xs font-mono uppercase tracking-wider text-slate-400 mb-3">❤️ Interests & Passions</h3>
+                <div class="flex flex-wrap gap-2.5">
+                    <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-medium text-slate-200 flex items-center gap-2">💻 Coding</span>
+                    <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-medium text-slate-200 flex items-center gap-2">🔐 Cybersecurity</span>
+                    <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-medium text-slate-200 flex items-center gap-2">🎬 Video Editing</span>
+                    <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-medium text-slate-200 flex items-center gap-2">🎨 Drawing</span>
+                    <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-medium text-slate-200 flex items-center gap-2">🤖 Artificial Intelligence</span>
+                    <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-medium text-slate-200 flex items-center gap-2">🚀 Technology</span>
+                    <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-medium text-slate-200 flex items-center gap-2">🌍 Open Source</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills & Tools -->
+    <section id="skills" class="py-16 px-4 max-w-5xl mx-auto">
+        <h2 class="text-2xl sm:text-3xl font-bold mb-10 text-white flex items-center gap-3">
+            <span class="text-emerald-400 font-mono">02.</span> Skills & Mobile Dev Setup
+        </h2>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <!-- Programming & OS -->
+            <div class="bg-slate-900/80 p-5 rounded-2xl border border-slate-800 hover:border-emerald-500/40 transition">
+                <div class="flex items-center gap-3 mb-4 text-emerald-400">
+                    <i class="fa-brands fa-python text-2xl"></i>
+                    <h3 class="font-bold text-white">Programming & OS</h3>
+                </div>
+                <ul class="space-y-2.5 text-sm text-slate-300 font-mono">
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-emerald-400 text-xs"></i> Python (Active)</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-emerald-400 text-xs"></i> Linux Terminal (Learning)</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-emerald-400 text-xs"></i> Problem Solving</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-emerald-400 text-xs"></i> Scripting</li>
+                </ul>
+            </div>
+
+            <!-- Cybersecurity & Web -->
+            <div class="bg-slate-900/80 p-5 rounded-2xl border border-slate-800 hover:border-cyan-500/40 transition">
+                <div class="flex items-center gap-3 mb-4 text-cyan-400">
+                    <i class="fa-solid fa-shield-halved text-2xl"></i>
+                    <h3 class="font-bold text-white">Security & Web</h3>
+                </div>
+                <ul class="space-y-2.5 text-sm text-slate-300 font-mono">
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-cyan-400 text-xs"></i> Cybersecurity Basics</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-cyan-400 text-xs"></i> HTML5 & CSS3</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-cyan-400 text-xs"></i> Git & GitHub</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-cyan-400 text-xs"></i> Open Source</li>
+                </ul>
+            </div>
+
+            <!-- Creative & Design -->
+            <div class="bg-slate-900/80 p-5 rounded-2xl border border-slate-800 hover:border-purple-500/40 transition">
+                <div class="flex items-center gap-3 mb-4 text-purple-400">
+                    <i class="fa-solid fa-wand-magic-sparkles text-2xl"></i>
+                    <h3 class="font-bold text-white">Creative Skills</h3>
+                </div>
+                <ul class="space-y-2.5 text-sm text-slate-300 font-mono">
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-purple-400 text-xs"></i> Video Editing 🎬</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-purple-400 text-xs"></i> Sketching & Drawing 🎨</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-purple-400 text-xs"></i> Suno AI Music Generation 🎵</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Mobile Dev Tools -->
+        <div class="mt-8 bg-slate-900/50 p-6 rounded-2xl border border-slate-800">
+            <h3 class="text-xs font-mono uppercase tracking-wider text-slate-400 mb-4">🛠️ Mobile Development Environment</h3>
+            <div class="flex flex-wrap gap-3">
+                <span class="px-3.5 py-2 rounded-xl bg-slate-800 text-slate-200 text-xs font-mono border border-slate-700 flex items-center gap-2">
+                    <i class="fa-solid fa-terminal text-emerald-400"></i> Termux
+                </span>
+                <span class="px-3.5 py-2 rounded-xl bg-slate-800 text-slate-200 text-xs font-mono border border-slate-700 flex items-center gap-2">
+                    <i class="fa-brands fa-python text-yellow-400"></i> Pydroid 3
+                </span>
+                <span class="px-3.5 py-2 rounded-xl bg-slate-800 text-slate-200 text-xs font-mono border border-slate-700 flex items-center gap-2">
+                    <i class="fa-solid fa-code text-blue-400"></i> Acode Editor
+                </span>
+                <span class="px-3.5 py-2 rounded-xl bg-slate-800 text-slate-200 text-xs font-mono border border-slate-700 flex items-center gap-2">
+                    <i class="fa-brands fa-git-alt text-red-400"></i> Git & GitHub
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="py-16 bg-slate-900/50 border-y border-slate-800/80 px-4">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-2xl sm:text-3xl font-bold mb-10 text-white flex items-center gap-3">
+                <span class="text-emerald-400 font-mono">03.</span> Achievements & Milestones
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- 10th Board -->
+                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 flex items-start gap-4">
+                    <div class="p-3 bg-emerald-500/10 border border-emerald-500/30 rounded-xl text-emerald-400 text-xl">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-extrabold text-white">87.80%</div>
+                        <div class="text-sm font-semibold text-emerald-400 mb-1">10th Board Exam</div>
+                        <p class="text-xs text-slate-400">Achieved excellent academic performance in Class 10th boards.</p>
+                    </div>
+                </div>
+
+                <!-- Drawing / Arts Grade -->
+                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 flex items-start gap-4">
+                    <div class="p-3 bg-purple-500/10 border border-purple-500/30 rounded-xl text-purple-400 text-xl">
+                        <i class="fa-solid fa-palette"></i>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-extrabold text-white">Grade B</div>
+                        <div class="text-sm fo
