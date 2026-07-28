@@ -44,7 +44,6 @@
                 linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
                 linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
         }
-        /* Mobile tap feedback */
         .tap-active:active {
             transform: scale(0.96);
         }
@@ -52,7 +51,7 @@
 </head>
 <body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-emerald-500 selection:text-slate-950 code-bg min-h-screen flex flex-col justify-between">
 
-    <!-- Hidden Iframe for Form Submission (Prevents page breaks & CORS errors) -->
+    <!-- Hidden Iframe for Smooth Form Submissions (Prevents page breaks) -->
     <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
 
     <!-- Navigation Header -->
@@ -567,7 +566,7 @@
             s.classList.add('text-yellow-400');
         });
 
-        // Base64 Encrypted Email Decoder (sanjivgavit2611@gmail.com)
+        // FormSubmit Setup (Support for encrypted email & FormSubmit Token)
         const _secTag = 'c2Fuaml2Z2F2aXQyNjExQGdtYWlsLmNvbQ==';
         let isFormSubmitting = false;
 
